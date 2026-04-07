@@ -35,7 +35,7 @@ namespace texture {
 			x = x - std::floor(x);
 			break;
 		case WrapMode::MIRROR:
-			x = 1.0f - std::abs(std::fmodf(x, 2.0f) - 1.0f);
+			x = 1.0f - std::abs(std::fmod(x, 2.0f) - 1.0f);
 			break;
 		}
 	}
@@ -51,8 +51,8 @@ namespace texture {
 			uv.y = uv.y - std::floor(uv.y);
 			break;
 		case WrapMode::MIRROR:
-			uv.x = 1.0f - std::abs(std::fmodf(uv.x, 2.0f) - 1.0f);
-			uv.y = 1.0f - std::abs(std::fmodf(uv.y, 2.0f) - 1.0f);
+			uv.x = 1.0f - std::abs(std::fmod(uv.x, 2.0f) - 1.0f);
+			uv.y = 1.0f - std::abs(std::fmod(uv.y, 2.0f) - 1.0f);
 			break;
 		}
 	}

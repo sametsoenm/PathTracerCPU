@@ -3,11 +3,12 @@
 #include <glm/vec3.hpp>
 #include <memory>
 #include "material/material.h"
+#include "rendersettings.h"
 
 class Light;
 
 struct Intersection {
-	float t = FLT_MAX;
+	float t = settings::T_MAX;
 	glm::vec3 pos{ 0.0f };
 	glm::vec2 uv{ 0.0f };
 

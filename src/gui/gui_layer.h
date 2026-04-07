@@ -2,6 +2,8 @@
 
 #include "rendersettings.h"
 
+#include <vector>
+
 struct GLFWwindow;
 
 class Renderer;

@@ -89,7 +89,7 @@ void Renderer::render_multi_thread_fixed_rows() {
 
 	for (size_t thread_id = 0; thread_id < settings::THREAD_COUNT; thread_id++) {
 		const size_t start_y = thread_id * rows_per_thread;
-		const const size_t end_y = (thread_id == settings::THREAD_COUNT - 1)
+		const size_t end_y = (thread_id == settings::THREAD_COUNT - 1)
 			? height
 			: start_y + rows_per_thread;
 

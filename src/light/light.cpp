@@ -85,7 +85,7 @@ LightSample LightList::sample(const glm::vec3& pos, const glm::vec3& u) const {
 float LightList::pdf_Li(
 	const glm::vec3& hit_pos,
 	const glm::vec3& light_pos,
-	const glm::vec3& light_normal) const const {
+	const glm::vec3& light_normal) const {
 	for (auto l : _lights) {
 		const float pdf = l->pdf_Li(hit_pos, light_pos, light_normal);
 		if (pdf > 0.0f)
