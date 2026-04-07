@@ -74,7 +74,7 @@ bool Triangle::bbox(AABB& box) const {
 LightSample Triangle::sample(const glm::vec3& pos, const glm::vec3& u) const {
     LightSample s{};
 
-    float su = std::sqrt(u.x);
+    float su = std::sqrt(u.x); 
 
     float b0 = 1.0f - su;
     float b1 = u.y * su;
