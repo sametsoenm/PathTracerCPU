@@ -23,6 +23,7 @@ BSDFSample DielectricMaterial::sample(
 		s.wi = glm::reflect(-wo, rec.shading_normal);
 		s.pdf = 1.0f; // maybe adjust for NEE
 		s.contrib = glm::vec3(1.0f); // pdf and bsdf not math accurate
+		s.sign = -1.0f;
 		return s;
 	}
 

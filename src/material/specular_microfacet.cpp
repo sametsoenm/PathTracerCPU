@@ -59,8 +59,9 @@ glm::vec3 SpecularMicrofacetMaterial::eval_bsdf_cos(
     const glm::vec3 wo_local = onb.to_local(wo);
     const glm::vec3 wi_local = onb.to_local(wi);
     
-    if (wo_local.z <= 0.0f || wi_local.z <= 0.0f)
+    if (wi_local.z <= 0.0f) {
         return glm::vec3(0.0f);
+    }
 
     const glm::vec3 wh_local = glm::normalize(wo_local + wi_local);
     const float wo_dot_wh = glm::max(0.0f, glm::dot(wo_local, wh_local));

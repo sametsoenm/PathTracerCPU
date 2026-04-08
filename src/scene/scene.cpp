@@ -4,6 +4,7 @@
 #include "material/diffuse_emissive.h"
 #include "material/specular_microfacet.h"
 #include "material/dielectric.h"
+#include "material/rough_dielectric.h"
 
 #include "intersectables/bvh.h"
 
@@ -58,6 +59,7 @@ void Scene::suzanne_scene() {
     auto textured = make_shared<SpecularMicrofacetMaterial>(
         Texture("assets/textures/metal.png"),
         Texture("assets/textures/roughness.png"));
+    auto roughD = make_shared<RoughDielectricMaterial>(1.45f, Texture(glm::vec3(0.2f)));
 
     // cam
     _cam.setPosition(glm::vec3(0.0f, 0.0f, 2.5f));
@@ -142,9 +144,9 @@ void Scene::suzanne_scene() {
         green_diffuse));
 
 
-    //load_obj("assets/models/suzanne.obj", white_diffuse, glm::vec3(2.4f, -1.5f, -4.4f), glm::vec3(1.0f));
+    load_obj("assets/models/suzanne.obj", roughD, glm::vec3(2.4f, -1.5f, -4.4f), glm::vec3(1.0f));
     //load_obj("assets/models/sponza.obj", white_diffuse, glm::vec3(0.0f), glm::vec3(1.0f));
-    load_obj("assets/models/teapot.obj", metal2, glm::vec3(0.f, -1.5f, 0.f), glm::vec3(.4f));
+    //load_obj("assets/models/teapot.obj", roughD, glm::vec3(0.f, -1.5f, 0.f), glm::vec3(.4f));
 }
 
 void Scene::og_scene() {
@@ -318,6 +320,7 @@ void Scene::sphere_scene() {
         Texture(glm::vec3(0.6f)),
         Texture(glm::vec3(0.2f)),
         Texture("assets/textures/normal2.png"));
+    auto roughD = make_shared<RoughDielectricMaterial>(1.3f, Texture(glm::vec3(0.1f)));
 
     // cam
     _cam.setFOV(60.0f);
@@ -390,7 +393,7 @@ void Scene::sphere_scene() {
         0.3f, glm::vec3(-0.36f, -0.2f, 0.36f), red_diffuse
     ));
     _objects.add(make_shared<Sphere>(
-        0.3f, glm::vec3(0.36f, -0.2f, 0.36f), glass
+        0.3f, glm::vec3(0.36f, -0.2f, 0.36f), roughD
     ));
 
     //load_obj("assets/models/suzanne.obj", white_diffuse, glm::vec3(2.0f, -1.0f, -5.f), glm::vec3(1.0f));

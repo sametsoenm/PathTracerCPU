@@ -52,7 +52,7 @@ add_executable(PathTracer
     "gui/imgui_internal.h" 
     "gui/backends/imgui_impl_glfw.cpp"
     "gui/backends/imgui_impl_opengl3.cpp"
- "renderer/simple_renderer/closest_hit.cpp" "renderer/simple_renderer/miss.cpp" "renderer/simple_renderer/tracer.cpp"  "util/aabb.h" "intersectables/bvh.h" "intersectables/bvh.cpp" "material/material_funcs.h" "scene/load_obj.cpp")
+ "renderer/simple_renderer/closest_hit.cpp" "renderer/simple_renderer/miss.cpp" "renderer/simple_renderer/tracer.cpp"  "util/aabb.h" "intersectables/bvh.h" "intersectables/bvh.cpp" "material/material_funcs.h" "scene/load_obj.cpp" "material/rough_dielectric.h" "material/rough_dielectric.cpp")
 
 target_include_directories(PathTracer
     PRIVATE

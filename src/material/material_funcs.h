@@ -81,8 +81,8 @@ namespace material {
 	}
 
 	inline float G1_smith(const float alpha, const glm::vec3& wx, const glm::vec3& wh) {
-		if (glm::dot(wx, wh) <= 0.0f)
-			return 0.0f;
+		//if (glm::dot(wx, wh) <= 0.0f) // if active transmission wont work
+		//	return 0.0f;
 
 		const float a2 = alpha * alpha;
 		const float frac = (wx.x * wx.x + wx.y * wx.y) / (wx.z * wx.z);
